@@ -11,7 +11,6 @@ struct Node {
 int main() {
 	FILE* f = fopen("./config", "w");
 	struct Node nodes[26];
-	char buffer[200];
 	double total_cost = 0.0;
 
 	srand((unsigned)time(NULL));
@@ -22,8 +21,7 @@ int main() {
 		nodes[i - 'A'].name = (char)i;
 		nodes[i - 'A'].cost = (double)(rand() % 100) / 10;
 		total_cost = total_cost + nodes[i - 'A'].cost;
-		sprintf(buffer, "%c:%.1f\n", nodes[i - 'A'].name, nodes[i - 'A'].cost);
-		fputs(buffer, f);
+		fprintf(f, "%c:%.1f\n", nodes[i - 'A'].name, nodes[i - 'A'].cost);
 	}
 
 	fputs("\n", f);
@@ -54,8 +52,7 @@ int main() {
 			total_stations = total_stations - 1;
 		}
 
-		sprintf(buffer, "K%02d:%d:%s\n", i, (int)(rand() % 100), line);
-		fputs(buffer, f);
+		fprintf(f, "K%02d:%d:%s\n", i, (int)(rand() % 100), line);
 	}
 
 	return 0;
