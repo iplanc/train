@@ -75,3 +75,44 @@ K03:30:AB...
     - 此参数不填的情况默认使用同目录下`config`文件
 - debug[TODO]
     - 此参数开启调试模式
+#### 输出样式
+```
+{002}<S -> U>
+K02SNECPGUIAJORVKTHB[S -> U]
+K07CMEIGRVTQABXSFOUPNDHLJ[S -> U]
+K10UQWEFTRGMXSKINO[S -> U]
+K12KFUHSJDMPYC[S -> U]
+K13FXTGDMIHLSUKAYNJO[S -> U]
+
+{编号}<出发地 -> 目的地>
+车辆编号与总线路[出发地 -> 目的地]
+车辆编号与总线路[出发地 -> 目的地]
+...
+车辆编号与总线路[出发地 -> 中转地] & 车辆编号与总线路[中转地 -> 目的地]
+...
+```
+
+## 运行效率
+```shell
+$ time ./scheme.exe 1000
+
+real    0m0.022s
+user    0m0.004s
+sys     0m0.019s
+
+$ time ./scheme.exe 10000
+
+real    0m0.054s
+user    0m0.030s
+sys     0m0.024s
+
+$ time ./scheme.exe 100000
+
+real    0m0.553s
+user    0m0.240s
+sys     0m0.138s
+```
+
+## TODO
+- `mapgen`的参数化生成
+- 可变站点与线路数量适应

@@ -2,10 +2,6 @@
     "editor.tabSize": 4,
     "workbench.tree.indent": 16,
     "files.associations": {
-        "*.embeddedhtml": "html",
-        "*.cjson": "jsonc",
-        "*.wxss": "css",
-        "*.wxs": "javascript",
         "time.h": "c",
         "stdio.h": "c",
         "stdlib.h": "c"
